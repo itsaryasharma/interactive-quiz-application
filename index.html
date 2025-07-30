@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="quiz-container">
+      <!-- Quiz Header -->
+      <div class="quiz-header">
+        <h1 class="quiz-title">Interactive Quiz</h1>
+        <p class="quiz-subtitle">
+          Test your knowledge with our interactive quiz!
+        </p>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <!-- Question Container -->
+      <div class="question-container">
+        <p class="question-text" id="questionText">
+          What is the capital of France?
+        </p>
+      </div>
+
+      <!-- Answer Options Container -->
+      <div class="answer-options" id="answerOptions">
+        <button class="answer-option" data-option="A">A) London</button>
+        <button class="answer-option" data-option="B">B) Paris</button>
+        <button class="answer-option" data-option="C">C) Berlin</button>
+        <button class="answer-option" data-option="D">D) Madrid</button>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="submit-button" id="submitButton">Submit Answer</button>
+
+      <!-- Feedback Container -->
+      <div class="feedback-container" id="feedbackContainer">
+        <div id="feedbackText"></div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="score-display" id="scoreDisplay">
+        Score: <span id="currentScore">0</span> /
+        <span id="totalQuestions">0</span>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript will be added here for quiz functionality
+      console.log("Quiz app loaded successfully!");
+    </script>
+  </body>
+</html>

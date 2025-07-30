@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main body styling with centered layout and responsive design */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main quiz container with clean, minimal design */
+.quiz-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Quiz header styling */
+.quiz-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quiz-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.quiz-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Question container styling */
+.question-container {
+  margin-bottom: 30px;
+}
+
+.question-text {
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* Answer options grid layout */
+.answer-options {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Individual answer option buttons with hover effects */
+.answer-option {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-align: left;
+  color: #333;
+}
+
+/* Hover effect for answer options */
+.answer-option:hover {
+  background: #e9ecef;
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+/* Selected state for answer options */
+.answer-option.selected {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+/* Submit button with gradient background and hover effects */
+.submit-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Hover effect for submit button */
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Disabled state for submit button */
+.submit-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Feedback container for displaying correct/incorrect messages */
+.feedback-container {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: none;
+}
+
+/* Correct answer feedback styling */
+.feedback-correct {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Incorrect answer feedback styling */
+.feedback-incorrect {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Score display styling */
+.score-display {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+/* Progress bar container */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Progress bar fill animation */
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* NEW: Mobile responsive design improvements */
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .quiz-title {
+    font-size: 2rem;
+  }
+  
+  .question-text {
+    font-size: 1.1rem;
+  }
+  
+  .answer-option {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+  
+  .submit-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+/* NEW: Tablet responsive design */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .quiz-container {
+    max-width: 500px;
+  }
+}
+
+/* NEW: Focus states for accessibility */
+.answer-option:focus,
+.submit-button:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* NEW: Smooth transitions for better UX */
+* {
+  transition: all 0.2s ease;
+} 
