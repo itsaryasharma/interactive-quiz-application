@@ -119,6 +119,102 @@ body {
   box-shadow: none;
 }
 
+/* Next button styling - similar to submit button */
+.next-button {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Hover effect for next button */
+.next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+}
+
+/* Disabled state for next button */
+.next-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Focus state for next button */
+.next-button:focus {
+  outline: 2px solid #28a745;
+  outline-offset: 2px;
+}
+
+/* Quiz completion screen styling */
+.completion-container {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.completion-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.final-score {
+  margin-bottom: 30px;
+}
+
+.final-score h3 {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.score-display-large {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.completion-message {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.restart-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.restart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.restart-button:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
 /* Feedback container for displaying correct/incorrect messages */
 .feedback-container {
   margin-top: 20px;

@@ -24,6 +24,31 @@ const questions = [
     question: "Who painted the Mona Lisa?",
     options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
     answer: "Leonardo da Vinci"
+  },
+  {
+    question: "What is the capital of Japan?",
+    options: ["Kyoto", "Osaka", "Tokyo", "Yokohama"],
+    answer: "Tokyo"
+  },
+  {
+    question: "Which element has the chemical symbol 'O'?",
+    options: ["Osmium", "Oxygen", "Oganesson", "Osmium"],
+    answer: "Oxygen"
+  },
+  {
+    question: "What is the largest ocean on Earth?",
+    options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+    answer: "Pacific Ocean"
+  },
+  {
+    question: "Who wrote 'Romeo and Juliet'?",
+    options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+    answer: "William Shakespeare"
+  },
+  {
+    question: "What is the square root of 144?",
+    options: ["10", "11", "12", "13"],
+    answer: "12"
   }
 ];
 
@@ -63,7 +88,7 @@ function handleAnswerSelection(option, event) {
 // ===============================
 // Function: handleSubmitAnswer
 // Purpose:  Processes the submitted answer, compares with correct answer, and updates score
-// Impact:   Shows feedback to user, updates score, and prepares for next question
+// Impact:   Shows feedback to user, updates score, and prepares for next question or quiz completion
 // ===============================
 function handleSubmitAnswer() {
   // Get the current question object
@@ -109,6 +134,132 @@ function handleSubmitAnswer() {
   const progressFill = document.getElementById('progressFill');
   const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
   progressFill.style.width = progressPercentage + '%';
+  
+  // Check if this is the last question
+  if (currentQuestionIndex === questions.length - 1) {
+    // This is the last question - show quiz completion after a delay
+    setTimeout(() => {
+      showQuizCompletion();
+    }, 1500); // 1.5 second delay before showing completion
+  } else {
+    // There are more questions - show next button after a short delay
+    setTimeout(() => {
+      showNextQuestionButton();
+    }, 1000); // 1 second delay before showing next button
+  }
+}
+
+// ===============================
+// Function: showNextQuestionButton
+// Purpose:  Shows the "Next Question" button and sets up event listener for it
+// Impact:   Allows user to proceed to the next question when ready
+// ===============================
+function showNextQuestionButton() {
+  const nextButton = document.getElementById('nextButton');
+  const submitButton = document.getElementById('submitButton');
+  
+  // Hide submit button and show next button
+  submitButton.style.display = 'none';
+  nextButton.style.display = 'block';
+  nextButton.disabled = false;
+  
+  // Add event listener for next button (only add once)
+  if (!nextButton.hasEventListener) {
+    nextButton.addEventListener('click', handleNextQuestion);
+    nextButton.hasEventListener = true; // Flag to prevent multiple listeners
+  }
+}
+
+// ===============================
+// Function: handleNextQuestion
+// Purpose:  Moves to the next question and resets the UI for the new question
+// Impact:   Loads the next question and resets all interactive elements
+// ===============================
+function handleNextQuestion() {
+  // Increment the question index to move to next question
+  currentQuestionIndex++;
+  
+  // Load the next question
+  loadQuestion(currentQuestionIndex);
+  
+  // Hide the next button and show submit button again
+  const nextButton = document.getElementById('nextButton');
+  const submitButton = document.getElementById('submitButton');
+  
+  nextButton.style.display = 'none';
+  submitButton.style.display = 'block';
+  submitButton.disabled = true; // Disable until user selects an answer
+}
+
+// ===============================
+// Function: showQuizCompletion
+// Purpose:  Hides quiz content and displays final score summary when quiz is complete
+// Impact:   Shows completion message, final score, and disables all interactive elements
+// ===============================
+function showQuizCompletion() {
+  // Get all the quiz content elements
+  const quizContainer = document.querySelector('.quiz-container');
+  const questionContainer = document.querySelector('.question-container');
+  const answerOptions = document.getElementById('answerOptions');
+  const submitButton = document.getElementById('submitButton');
+  const nextButton = document.getElementById('nextButton');
+  const feedbackContainer = document.getElementById('feedbackContainer');
+  
+  // Calculate final score percentage
+  const scorePercentage = Math.round((score / questions.length) * 100);
+  
+  // Create completion message based on performance
+  let completionMessage = '';
+  if (scorePercentage >= 80) {
+    completionMessage = 'Excellent! You\'re a quiz master! 🎉';
+  } else if (scorePercentage >= 60) {
+    completionMessage = 'Good job! You did well! 👍';
+  } else if (scorePercentage >= 40) {
+    completionMessage = 'Not bad! Keep practicing! 💪';
+  } else {
+    completionMessage = 'Keep studying! You\'ll get better! 📚';
+  }
+  
+  // Hide all quiz content
+  questionContainer.style.display = 'none';
+  answerOptions.style.display = 'none';
+  submitButton.style.display = 'none';
+  nextButton.style.display = 'none';
+  feedbackContainer.style.display = 'none';
+  
+  // Create and display completion content
+  const completionHTML = `
+    <div class="completion-container">
+      <h2 class="completion-title">🎉 Quiz Complete! 🎉</h2>
+      <div class="final-score">
+        <h3>Your Final Score</h3>
+        <div class="score-display-large">
+          ${score} / ${questions.length} (${scorePercentage}%)
+        </div>
+      </div>
+      <p class="completion-message">${completionMessage}</p>
+      <button class="restart-button" onclick="restartQuiz()">Take Quiz Again</button>
+    </div>
+  `;
+  
+  // Replace quiz content with completion message
+  quizContainer.innerHTML = completionHTML;
+  
+  // Ensure progress bar is at 100%
+  const progressFill = document.getElementById('progressFill');
+  if (progressFill) {
+    progressFill.style.width = '100%';
+  }
+}
+
+// ===============================
+// Function: restartQuiz
+// Purpose:  Resets the quiz to start over from the beginning
+// Impact:   Reloads the page to restart the quiz with fresh state
+// ===============================
+function restartQuiz() {
+  // Reload the page to restart the quiz
+  window.location.reload();
 }
 
 // ===============================
@@ -154,6 +305,11 @@ loadQuestion(0); // This will load and display the first question and its option
 
 
 // ===============================
+// Function: loadQuestion
+// Purpose:  Loads and displays a specific question with its options
+// Params:   questionIndex (number) - the index of the question to load
+// Impact:   Updates the UI with new question content and resets interactive elements
+// ===============================
 function loadQuestion(questionIndex) {
   // Get the question object from the questions array
   const currentQuestion = questions[questionIndex];
@@ -173,6 +329,9 @@ function loadQuestion(questionIndex) {
     button.className = 'answer-option';
     button.textContent = String.fromCharCode(65 + idx) + ') ' + option; // A) Option
     button.setAttribute('data-option', option);
+    // Re-enable the button and reset cursor
+    button.disabled = false;
+    button.style.cursor = 'pointer';
     answerOptionsElem.appendChild(button);
   });
 
@@ -187,9 +346,13 @@ function loadQuestion(questionIndex) {
   // Reset selected answer for new question
   selectedAnswer = null;
   
-  // Disable submit button until an answer is selected
+  // Show submit button and hide next button
   const submitButton = document.getElementById('submitButton');
-  submitButton.disabled = true;
+  const nextButton = document.getElementById('nextButton');
+  
+  submitButton.style.display = 'block';
+  submitButton.disabled = true; // Disable until user selects an answer
+  nextButton.style.display = 'none';
   
   // Update progress bar to show current question progress
   // Start at 0% for first question, then update after each submission
