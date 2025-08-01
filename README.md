@@ -45,18 +45,18 @@ Through this project, I practiced how a real frontend developer thinks: planning
 
 # OUTPUTS
 
-1. https://github.com/user-attachments/assets/3b94a9a4-8906-4380-b772-ac70cfdf60ea
+1. <img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/3b94a9a4-8906-4380-b772-ac70cfdf60ea" />
 
-2. https://github.com/user-attachments/assets/9a8d2f98-7228-4bfc-a8ac-5b3a90f1b377
+2. <img width="1919" height="1070" alt="Image" src="https://github.com/user-attachments/assets/9a8d2f98-7228-4bfc-a8ac-5b3a90f1b377" />
 
-3. https://github.com/user-attachments/assets/9bb8465f-eb42-423d-81be-b6037a34565a
+3. <img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/9bb8465f-eb42-423d-81be-b6037a34565a" />
 
-4. https://github.com/user-attachments/assets/84661d63-d829-4db2-886d-af4b33982f16
+4. <img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/84661d63-d829-4db2-886d-af4b33982f16" />
 
-5. https://github.com/user-attachments/assets/b29dc1d7-198c-4d1c-bb62-2076185f241f
+5. <img width="1916" height="1079" alt="Image" src="https://github.com/user-attachments/assets/b29dc1d7-198c-4d1c-bb62-2076185f241f" />
 
-6. https://github.com/user-attachments/assets/65b2ab75-6192-40fb-b8df-a606146f100e
+6. <img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/65b2ab75-6192-40fb-b8df-a606146f100e" />
 
-7. https://github.com/user-attachments/assets/1e72aa4e-3373-4e13-8833-ca6bdfb4b97c
+7. <img width="1919" height="1055" alt="Image" src="https://github.com/user-attachments/assets/1e72aa4e-3373-4e13-8833-ca6bdfb4b97c" />
 
 **Thank you for reviewing my project!**
