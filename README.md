@@ -45,18 +45,18 @@ Through this project, I practiced how a real frontend developer thinks: planning
 
 # OUTPUTS
 
- <img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/3b94a9a4-8906-4380-b772-ac70cfdf60ea" />
+<img width="1918" height="1023" alt="Image" src="https://github.com/user-attachments/assets/03e6cce0-6829-43e9-948c-a19ddd567d41" />
 
- <img width="1919" height="1070" alt="Image" src="https://github.com/user-attachments/assets/9a8d2f98-7228-4bfc-a8ac-5b3a90f1b377" />
+<img width="1918" height="1012" alt="Image" src="https://github.com/user-attachments/assets/576ea3b6-2166-4e3d-972c-b9f941572d8e" />
 
- <img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/9bb8465f-eb42-423d-81be-b6037a34565a" />
+<img width="1916" height="1022" alt="Image" src="https://github.com/user-attachments/assets/fd7a4120-90ce-4037-a886-b2fef1d296aa" />
 
- <img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/84661d63-d829-4db2-886d-af4b33982f16" />
+<img width="1918" height="1021" alt="Image" src="https://github.com/user-attachments/assets/ba78e3b9-21ee-461e-bb2d-870d1936073b" />
 
- <img width="1916" height="1079" alt="Image" src="https://github.com/user-attachments/assets/b29dc1d7-198c-4d1c-bb62-2076185f241f" />
+<img width="1914" height="1020" alt="Image" src="https://github.com/user-attachments/assets/5b0e5ceb-1fe9-410d-bde8-2c7a1f07f6f1" />
 
- <img width="1919" height="1079" alt="Image" src="https://github.com/user-attachments/assets/65b2ab75-6192-40fb-b8df-a606146f100e" />
+<img width="1918" height="1021" alt="Image" src="https://github.com/user-attachments/assets/1132b79c-01c8-446c-b6b8-fc30a09e7620" />
 
- <img width="1919" height="1055" alt="Image" src="https://github.com/user-attachments/assets/1e72aa4e-3373-4e13-8833-ca6bdfb4b97c" />
+<img width="1918" height="1001" alt="Image" src="https://github.com/user-attachments/assets/d0d5d7d5-2227-443e-a178-685fb13cba98" />
 
 **Thank you for reviewing my project!**
